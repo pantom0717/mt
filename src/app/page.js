@@ -14,6 +14,10 @@ import { useEffect, useState } from "react";
 // - 현선식품: 중반 최악 → 후반 급등 (숨은 대박주)
 const stockTimeline = {
   "00:00": { "선명전자": 0, "재영엔터": 0, "우열축산": 0, "본걸물류": 0, "민경테크": 0, "영빈뷰티": 0, "경환FC": 0, "현선식품": 0 },
+  "12:45": { "선명전자": 1000, "재영엔터": 1000, "우열축산": 1000, "본걸물류": 1000, "민경테크": 1000, "영빈뷰티": 1000, "경환FC": 1000, "현선식품": 1000 },
+  "12:50": { "선명전자": 1500, "재영엔터": 800, "우열축산": 1200, "본걸물류": 900, "민경테크": 1800, "영빈뷰티": 1400, "경환FC": 1100, "현선식품": 1300 },
+  "12:55": { "선명전자": 2200, "재영엔터": 600, "우열축산": 1500, "본걸물류": 800, "민경테크": 2500, "영빈뷰티": 1900, "경환FC": 900, "현선식품": 1600 },
+  "13:00": { "선명전자": 2800, "재영엔터": 700, "우열축산": 1800, "본걸물류": 1000, "민경테크": 3200, "영빈뷰티": 2400, "경환FC": 1500, "현선식품": 1400 },
   "14:30": { "선명전자": 1000, "재영엔터": 1000, "우열축산": 1000, "본걸물류": 1000, "민경테크": 1000, "영빈뷰티": 1000, "경환FC": 1000, "현선식품": 1000 },
   "14:35": { "선명전자": 1000, "재영엔터": 1000, "우열축산": 1000, "본걸물류": 1000, "민경테크": 1000, "영빈뷰티": 1000, "경환FC": 1000, "현선식품": 1000 },
   "16:15": { "선명전자": 1000, "재영엔터": 1000, "우열축산": 1000, "본걸물류": 1000, "민경테크": 1000, "영빈뷰티": 1000, "경환FC": 1000, "현선식품": 1000 },
@@ -68,6 +72,8 @@ function getPreviousAvailableTimeKey(currentKey) {
 export default function Home() {
   const [timeKey, setTimeKey] = useState("");
   const [clock, setClock] = useState("");
+  console.log("현재 timeKey:", timeKey);
+  console.log("해당 시각의 데이터:", stockTimeline[timeKey]);
 
   useEffect(() => {
     const updateTime = () => {
@@ -107,11 +113,11 @@ export default function Home() {
         <h2 className="text-4xl font-semibold text-red-400">
           폭풍의 증권시장
         </h2>
-      </div>      
-      
-      
+      </div>
+
+
       <h1 className="text-4xl mb-6">🕒 {clock} (기준: {timeKey})</h1>
-      <div className="w-full max-w-4xl border border-white divide-y divide-white/40">
+      <div className="w-full max-w-2xl border border-white divide-y divide-white/40">
         <div className="grid grid-cols-4 p-2 font-bold bg-white text-black">
           <div className="border-r border-dashed border-white pr-2">종목</div>
           <div className="border-r border-dashed border-white px-2 text-center">직전가</div>
@@ -145,15 +151,15 @@ export default function Home() {
         })}
       </div>
       {/* 게임 규칙 안내 */}
-      <div className="mt-12 max-w-4xl w-full bg-white/10 text-white border border-white p-6 rounded-xl leading-relaxed text-base">
+      <div className="mt-12 max-w-3xl w-full bg-white/10 text-white border border-white p-6 rounded-xl leading-relaxed text-base">
         <h3 className="text-2xl font-bold mb-4 text-blue-100">📢 폭풍의 증권시장 규칙 📢 (Rule)</h3>
 
         <div className="mb-4">
           <h4 className="text-xl font-semibold mb-2 text-yellow-300">🎯 게임 개요</h4>
           <ul className="list-disc list-inside space-y-1 ml-2">
             <li>각 팀은 8개 기업 중 하나를 무작위로 배정받습니다.</li>
-            <li>초기 자산은 <strong>현금 10,000원</strong>과 <strong>자사 주식 7주</strong>입니다.</li>
-            <li>각 팀은 자사 기업의 <strong>비공개 내부 정보 5개</strong>를 제공받습니다.</li>
+            <li>초기 자산은 <strong>현금 3,000원</strong>과 <strong>자사 주식 7주</strong>입니다.</li>
+            <li>각 팀은 라운드별 자사 기업의 <strong>비공개 내부 정보 4개</strong>를 제공받습니다.</li>
           </ul>
         </div>
 
