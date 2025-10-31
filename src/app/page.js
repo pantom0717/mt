@@ -159,7 +159,7 @@ export default function Home() {
           <ul className="list-disc list-inside space-y-1 ml-2">
             <li>각 팀은 8개 기업 중 하나를 무작위로 배정받습니다.</li>
             <li>초기 자산은 <strong>현금 3,000원</strong>과 <strong>자사 주식 7주</strong>입니다.</li>
-            <li>각 팀은 라운드별 자사 기업의 <strong>비공개 내부 정보 4개</strong>를 제공받습니다.</li>
+            <li>각 팀은 라운드별 자사 기업의 <strong>비공개 내부 정보 3개</strong>를 제공받습니다.</li>
           </ul>
         </div>
 
